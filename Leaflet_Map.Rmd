@@ -1,0 +1,37 @@
+---
+title: "Interactive Leaflet Map of Long Island University Brooklyn"
+author: ""
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+library(leaflet)
+```
+
+# Welcome!
+
+This webpage was created on **`r Sys.Date()`**.
+
+For this assignment, I created an interactive map using the **Leaflet** package in R. The map highlights the location of **Long Island University Brooklyn**, where I attend school.
+
+```{r}
+leaflet() %>%
+  addProviderTiles(providers$OpenStreetMap) %>%
+  setView(
+    lng = -73.9808,
+    lat = 40.6906,
+    zoom = 16
+  ) %>%
+  addMarkers(
+    lng = -73.9808,
+    lat = 40.6906,
+    popup = "<b>Long Island University Brooklyn</b><br>Brooklyn, New York"
+  )
+```
+
+## About
+
+This interactive map was created with the **Leaflet** package in R and displays the location of Long Island University Brooklyn in New York City.
